@@ -1,0 +1,21 @@
+project: taxi_data_feature_repo
+# By default, the registry is a file (but can be turned into a more scalable SQL-backed registry)
+registry: data/registry.db
+# The provider primarily specifies default offline / online stores & storing the registry in a given cloud
+provider: gcp
+
+offline_store:
+  type: bigquery
+  
+  project_id: opportune-baton-464110-c1
+  dataset: VLBA
+
+
+
+auth:
+    type: no_auth
+
+entity_key_serialization_version: 2
+# By default, no_auth for authentication and authorization, other possible values kubernetes and oidc. Refer the documentation for more details.
+
+
