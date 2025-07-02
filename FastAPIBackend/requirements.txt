@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pandas
+mlflow
+scikit-learn
+geopy
+requests
+pydantic
+prometheus-fastapi-instrumentator
+joblib
+python-multipart
