@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  mlflow-db:
+    image: mysql:8
+    container_name: mlflow-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mlflow
+      MYSQL_USER: mlflow
+      MYSQL_PASSWORD: mlflow
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+    networks:
+      - mlflow-net
+
+
+  mlflow-server:
+    build: .
+    container_name: mlflow-server
+    depends_on:
+      mlflow-db:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    command: >
+      sh -c "sleep 50 && mlflow server 
+      --backend-store-uri mysql+pymysql://mlflow:mlflow@mlflow-db:3306/mlflow 
+      --default-artifact-root /mlflow/artifacts 
+      --host 0.0.0.0"
+    volumes:
+      - D:\OVGU _Saurabh\Sem -2\VLBA CODE\mlartifacts:/mlflow/artifacts
+    restart: always
+    networks:
+      - mlflow-net
+
+
+volumes:
+  mysql-data:
+networks:
+  mlflow-net:
+    driver: bridge

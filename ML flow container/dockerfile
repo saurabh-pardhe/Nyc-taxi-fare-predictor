@@ -1,0 +1,6 @@
+FROM ghcr.io/mlflow/mlflow:latest
+
+RUN pip install \
+    cryptography==44.0.2 \
+    boto3==1.37.20 \
+    pymysql==1.1.1
