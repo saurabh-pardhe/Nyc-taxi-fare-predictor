@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+*.pyo
+*.pyd
+*.log
+*.out
+# Virtual environments
+.env
+.venv
+env/
+ENV/
+venv/
+
+# MLflow
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow.log
+
