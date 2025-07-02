@@ -21,12 +21,6 @@ mlartifacts/
 mlflow.db
 mlflow.log
 
-#Angular 
-# See https://angular.io/guide/build for Angular CLI builds
-# Compiled output
-/dist/
-/out-tsc/
-/build/
 
 # Node modules
 /node_modules/
