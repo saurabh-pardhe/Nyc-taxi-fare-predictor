@@ -21,3 +21,27 @@ mlartifacts/
 mlflow.db
 mlflow.log
 
+#Angular 
+# See https://angular.io/guide/build for Angular CLI builds
+# Compiled output
+/dist/
+/out-tsc/
+/build/
+
+# Node modules
+/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+
+# Compiled JavaScript
+*.js
+*.js.map
+
