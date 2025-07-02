@@ -1,0 +1,31 @@
+<div class="predictor-container">
+  <header class="app-header">
+    🚖 <span class="title-text">NYC Taxi Fare Predictor</span>
+  </header>
+
+  <div class="form-group">
+    <label for="pickup">Pickup Zone:</label>
+    <select id="pickup" [(ngModel)]="pickup">
+      <option *ngFor="let loc of locations" [value]="loc.LocationID">
+        {{ loc.Zone }} ({{ loc.service_zone }})
+      </option>
+    </select>
+
+    <label for="dropoff">Dropoff Zone:</label>
+    <select id="dropoff" [(ngModel)]="dropoff">
+      <option *ngFor="let loc of locations" [value]="loc.LocationID">
+        {{ loc.Zone }} ({{ loc.service_zone }})
+      </option>
+    </select>
+
+    <label for="passengers">Passenger Count:</label>
+    <input type="number" id="passengers" [(ngModel)]="passengers" min="1" max="6" />
+
+    <button class="predict-btn" (click)="predictFare()">🚀 Predict Fare</button>
+  <div *ngIf="prediction" class="result-box">
+    <h3>Predicted Fare: <span class="fare">{{ prediction | currency }}</span></h3>
+    <p class="disclaimer">
+      *Note: Fare predictions are based on historical data and estimated distances using the location library.
+    </p>
+  </div>
+</div>

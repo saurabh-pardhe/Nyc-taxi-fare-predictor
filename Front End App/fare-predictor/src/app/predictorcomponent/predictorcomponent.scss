@@ -1,0 +1,62 @@
+.predictor-container {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 1.5rem;
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.app-header {
+  background-color: #ffcc00;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+  color: #333;
+}
+
+.form-group label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.form-group select,
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.predict-btn {
+  margin-top: 1rem;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.predict-btn:hover {
+  background-color: #005a9e;
+}
+
+.result-box {
+  margin-top: 1.5rem;
+  background-color: #e0f7fa;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.fare {
+  color: #00796b;
+  font-weight: bold;
+}
